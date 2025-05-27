@@ -28,11 +28,12 @@ on:
       openwrt_kernel:
         description: "Select kernel version"
         required: true
-        default: "6.6.y"
+        default: "6.6.86"
         type: choice
         options:
           - 6.1.y
           - 6.6.y
+          - 6.6.86
       auto_kernel:
         description: "Auto use the latest kernel"
         required: true
@@ -47,7 +48,7 @@ on:
           - ophub/kernel
       kernel_usage:
         description: "Set the tags of the stable kernel."
-        required: false
+        required: true
         default: "stable"
         type: choice
         options:
@@ -57,7 +58,7 @@ on:
           - beta
       openwrt_storage:
         description: "Select image storage type."
-        required: false
+        required: true
         default: "save"
         type: choice
         options:
@@ -65,7 +66,7 @@ on:
           - temp
       builder_name:
         description: "Set OpenWrt builder signature."
-        required: false
+        required: true
         default: "x"
         type: choice
         options:
