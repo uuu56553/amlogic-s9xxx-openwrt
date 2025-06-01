@@ -45,10 +45,10 @@ on:
       kernel_usage:
         description: "Set the tags of the stable kernel."
         required: true
-        default: "flippy"
+        default: "stable"
         type: choice
         options:
-          - flippy
+          - stable
       openwrt_storage:
         description: "Select image storage type."
         required: true
