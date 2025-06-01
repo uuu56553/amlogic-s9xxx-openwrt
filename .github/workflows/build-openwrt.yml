@@ -12,27 +12,24 @@ on:
       source_branch:
         description: "Select the source branch"
         required: true
-        default: "openwrt-main"
+        default: "lede-master"
         type: choice
         options:
           - lede-master
-          - immortalwrt-master
       openwrt_board:
         description: "Select device board"
         required: true
         default: "jp-tvbox"
         type: choice
         options:
-          - all
           - jp-tvbox
       openwrt_kernel:
         description: "Select kernel version"
         required: true
-        default: "6.6.92"
+        default: "6.1.137"
         type: choice
         options:
-          - 6.6.y
-          - 6.6.92
+          - 6.1.137
       auto_kernel:
         description: "Auto use the latest kernel"
         required: true
@@ -48,13 +45,10 @@ on:
       kernel_usage:
         description: "Set the tags of the stable kernel."
         required: true
-        default: "stable"
+        default: "flippy"
         type: choice
         options:
-          - stable
           - flippy
-          - dev
-          - beta
       openwrt_storage:
         description: "Select image storage type."
         required: true
@@ -62,16 +56,13 @@ on:
         type: choice
         options:
           - save
-          - temp
       builder_name:
         description: "Set OpenWrt builder signature."
         required: true
-        default: "x"
+        default: "openwrt"
         type: choice
         options:
-          - ophub
-          - angel
-          - x
+          - openwrt
 
 env:
   FEEDS_CONF: config/${{ inputs.source_branch }}/feeds.conf.default
